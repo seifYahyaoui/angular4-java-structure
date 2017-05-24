@@ -15,6 +15,8 @@ import { CentralVideoComponent } from './central-video/central-video.component';
 import { MaterialModule } from '@angular/material';
 import { MdlModule } from 'angular2-mdl';
 
+import {NVRSerices} from './services/NVRS.services';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -35,7 +37,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     MdlModule
   ],
-  providers: [],
+  providers: [NVRSerices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
