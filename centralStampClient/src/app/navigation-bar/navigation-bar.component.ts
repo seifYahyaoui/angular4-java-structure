@@ -14,14 +14,27 @@ export class NavigationBarComponent implements OnInit {
   constructor(private navrService: NVRSerices) { }
 
   ngOnInit() {
-   this.navrService.getAllPersons().subscribe(res=> {
-     this.persons = res,
-       error => alert(error),
-       () => console.log('okiiiiiiiii')
-     }
-
-    );
-    console.log('this.persons ======='+this.persons);
+    this.getPersons();
+    console.log('afffffffffff ======='+this.persons);
   }
+
+  getPersons(){
+    this.navrService.getAllPersons().subscribe(res=> {
+        this.persons = res,
+          error => alert(error),
+          () => console.log('okiiiiiiiii')
+      }
+    );
+    console.log('reuslttttttt'+ this.persons);
+  }
+
+/*  this.navrService.getAllPersons().subscribe(res=> {
+  this.persons = res,
+  error => alert(error),
+() => console.log('okiiiiiiiii')
+}
+
+);
+*/
 
 }

@@ -79,6 +79,7 @@
   </span>
 </div>
 
-<div *ngFor="let person of persons">
- {{person.firstName}}
+<button (click)="getPersons()">CLICK</button>
+<div>
+ {{persons}}
 </div>

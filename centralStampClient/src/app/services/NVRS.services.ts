@@ -28,18 +28,19 @@ export class NVRSerices {
      return this._http.get('http://localhost:8080/persons/all')
        .map(response => {
          let persons = [new Person()];
-         console.log(response.json());
-         response.json().forEach((item: any) => {
-           console.log('itemmmmmm: '+item);
+         let res = response.json();
+         console.log('response.json == '+res);
+         for(var i = 0; i < res.length;i++){
+           console.log('itemmmmmm: '+res[i]);
            let person: Person = new Person();
-           var obj = JSON.parse (item);
-           person.id = obj.id;
-           person.firsTname = obj.firstName;
-           person.lastName = obj.lastName;
-           person.age = obj.age;
-           console.log('personnnn: '+person);
+
+           person.id = res[i].id;
+           person.firsTname = res[i].firstName;
+           person.lastName = res[i].lastName;
+           person.age = res[i].age;
+           console.log('personnnn: '+ res[i].firstName);
            persons.push(person);
-         });
+         };
          return persons;
        });
    }
