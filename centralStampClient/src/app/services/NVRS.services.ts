@@ -17,23 +17,32 @@ export class NVRSerices {
 
   }
 
-  public getAllPersons(){
+  // public getAllPersons(){
+  //
+  //   return this._http.get('http://localhost:8080/persons/all')
+  //     .map(response => response.json());
+  // }
 
-    return this._http.get('http://localhost:8080/persons/all')
-      .map(response => response.json());
-  }
-  /*
-  *  public getAllPersons():Person[]{
+   public getAllPersons():Observable<Person[]> {
 
-   return this._http.get('http://localhost:8080/persons/all')
-   .map(response => {
-   let persons : Person = [];
-   response.json().forEach(item =>{
-   let person : Person = new Person();
+     return this._http.get('http://localhost:8080/persons/all')
+       .map(response => {
+         let persons = [new Person()];
+         console.log(response.json());
+         response.json().forEach((item: any) => {
+           console.log('itemmmmmm: '+item);
+           let person: Person = new Person();
+           var obj = JSON.parse (item);
+           person.id = obj.id;
+           person.firsTname = obj.firstName;
+           person.lastName = obj.lastName;
+           person.age = obj.age;
+           console.log('personnnn: '+person);
+           persons.push(person);
+         });
+         return persons;
+       });
+   }
 
-   });
-   return persons;
-   });
-  * */
 
 }

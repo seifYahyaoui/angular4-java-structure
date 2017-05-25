@@ -9,18 +9,19 @@ import {Person} from "../model/model";
 })
 export class NavigationBarComponent implements OnInit {
 
-   res : any;
+  persons : Person[];
 
   constructor(private navrService: NVRSerices) { }
 
   ngOnInit() {
    this.navrService.getAllPersons().subscribe(res=> {
-     this.res = JSON.stringify(res),
+     this.persons = res,
        error => alert(error),
        () => console.log('okiiiiiiiii')
      }
 
     );
+    console.log('this.persons ======='+this.persons);
   }
 
 }

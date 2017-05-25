@@ -1,5 +1,6 @@
 package com.central.controller;
 
+import java.util.Collection;
 import java.util.Hashtable;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class PersonController {
 	private PersonService personService;
 
 	@RequestMapping(value="/all", method=RequestMethod.GET, produces="application/json")
-	public Hashtable<String, Person> getAll() {
+	public Collection<Person> getAll() {
 		return personService.getAll();
 	}
 

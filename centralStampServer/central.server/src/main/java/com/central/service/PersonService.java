@@ -1,5 +1,6 @@
 package com.central.service;
 
+import java.util.Collection;
 import java.util.Hashtable;
 
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ public class PersonService {
 		return p;
 	}
 
-	public Hashtable<String, Person> getAll() {
-		return persons;
+	public Collection< Person> getAll() {
+		return persons.values();
 	}
 }
