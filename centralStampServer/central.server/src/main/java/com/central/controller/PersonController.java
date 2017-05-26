@@ -1,7 +1,6 @@
 package com.central.controller;
 
 import java.util.Collection;
-import java.util.Hashtable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +20,7 @@ public class PersonController {
 
 	@RequestMapping(value="/all", method=RequestMethod.GET, produces="application/json")
 	public Collection<Person> getAll() {
+		System.out.println(personService.getAll().size()+" =======");
 		return personService.getAll();
 	}
 

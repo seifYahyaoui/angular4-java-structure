@@ -10,24 +10,32 @@ import {Person} from "../model/model";
 export class NavigationBarComponent implements OnInit {
 
   persons : Person[];
-
   constructor(private navrService: NVRSerices) { }
 
   ngOnInit() {
     this.getPersons();
-    console.log('afffffffffff ======='+this.persons);
   }
 
   getPersons(){
-    this.navrService.getAllPersons().subscribe(res=> {
-        this.persons = res,
-          error => alert(error),
-          () => console.log('okiiiiiiiii')
-      }
-    );
-    console.log('reuslttttttt'+ this.persons);
+    this.navrService.getAllPersons().toPromise().then(res => this.persons = res);
+    console.log('size  == '+this.persons?0:this.persons.length);
   }
 
+  callEdit(index:number){
+    console.log("ng button edit " +index);
+
+  }
+
+  callDelete(index:number){
+    console.log("ng button delete "+index);
+    this.persons.splice(index,1);
+    // save in db
+    // this.getPersons();
+  }
+
+  savePersons(){
+    // save persons
+  }
 /*  this.navrService.getAllPersons().subscribe(res=> {
   this.persons = res,
   error => alert(error),

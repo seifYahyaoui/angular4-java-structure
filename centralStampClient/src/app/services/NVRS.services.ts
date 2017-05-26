@@ -27,18 +27,17 @@ export class NVRSerices {
 
      return this._http.get('http://localhost:8080/persons/all')
        .map(response => {
-         let persons = [new Person()];
+         let persons = [];
          let res = response.json();
-         console.log('response.json == '+res);
+
          for(var i = 0; i < res.length;i++){
-           console.log('itemmmmmm: '+res[i]);
+           console.log('index : '+ i)
            let person: Person = new Person();
 
            person.id = res[i].id;
-           person.firsTname = res[i].firstName;
+           person.firstName = res[i].firstName;
            person.lastName = res[i].lastName;
            person.age = res[i].age;
-           console.log('personnnn: '+ res[i].firstName);
            persons.push(person);
          };
          return persons;

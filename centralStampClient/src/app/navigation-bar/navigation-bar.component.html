@@ -1,85 +1,48 @@
-<div id="p1" class="mdl-progress mdl-js-progress"></div>
-<script>
-  document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
-    this.MaterialProgress.setProgress(44);
-  });
-</script>
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-  Button
-</button>
+<button (click)="getPersons()"><i class="material-icons">refresh</i></button>
 
-<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-1">
-  <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" checked>
-  <span class="mdl-checkbox__label">Checkbox</span>
-</label>
-<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-2">
-  <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
-  <span class="mdl-checkbox__label">Checkbox</span>
-</label>
-<br>
-<br>
-<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+<button (click)="savePersons()"><i class="material-icons">save</i></button>
+
+<table class="mdl-data-table mdl-js-data-table mdl-shadow--1dp">
   <thead>
   <tr>
-    <th class="mdl-data-table__cell--non-numeric">Material</th>
-    <th>Quantity</th>
-    <th>Unit price</th>
+    <th class="mdl-data-table__cell--non-numeric">ID</th>
+    <th>FIRSTNAME</th>
+    <th>LASTNAME</th>
+    <th>AGE</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-    <td>25</td>
-    <td>$2.90</td>
-  </tr>
-  <tr>
-    <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-    <td>50</td>
-    <td>$1.25</td>
-  </tr>
-  <tr>
-    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-    <td>10</td>
-    <td>$2.35</td>
+  <tr *ngFor="let person of persons; let i = index">
+    <td class="mdl-data-table__cell--non-numeric"> {{person.id}}</td>
+    <td contenteditable="true" [textContent]="person.firstName" (input)="person.firstName=$event.target.textContent">{{person.firstName}}</td>
+    <td contenteditable="true" [textContent]="person.lastName" (input)="person.lastName=$event.target.textContent">{{person.lastName}}</td>
+    <td contenteditable="true" [textContent]="person.age" (input)="person.age=$event.target.textContent">{{person.age}}</td>
+    <td>
+      <a (click)="callEdit(person)" name="editButton"
+         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon"><i
+        class="material-icons">subdirectory_arrow_left</i></a>
+      <a (click)="callDelete(i)" name="deleteButton"
+         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i
+        class="material-icons">delete</i></a>
+    </td>
   </tr>
   </tbody>
 </table>
-<br>
-<br>
-<mdl-layout-title>Ng2 Finance</mdl-layout-title>
-<nav class="mdl-navigation">
-  <a class="mdl-navigation__link">Watchlist</a>
-</nav>
-<div>
-  <md-toolbar color="primary">
-    <span><md-icon>mood</md-icon></span>
 
-    <span>Yay, Material in Angular 2!</span>
+<!--<div id="editForm" style="display: none">-->
 
-    <button md-icon-button [md-menu-trigger-for]="menu">
-      <md-icon>more_vert</md-icon>
-    </button>
-  </md-toolbar>
-  <md-menu x-position="before" #menu="mdMenu">
-    <button md-menu-item>Option 1</button>
-    <button md-menu-item>Option 2</button>
-  </md-menu>
+<!--</div>-->
+<!--<script>-->
+  <!--// A $( document ).ready() block.-->
+  <!--$(document).ready(function () {-->
+    <!--$("a[name='editButton']").click(function () {-->
+      <!--console.log("jquery button edit");-->
+    <!--});-->
+    <!--$("a[name='deleteButton']").click(function () {-->
+      <!--console.log("jquery button delete");-->
 
-  <md-card>
-    <button md-button>All</button>
-    <button md-raised-button>Of</button>
-    <button md-raised-button color="primary">The</button>
-    <button md-raised-button color="accent">Buttons</button>
-  </md-card>
+    <!--});-->
+  <!--});-->
 
-  <span class="done">
-    <button md-fab>
-      <md-icon>check circle</md-icon>
-    </button>
-  </span>
-</div>
-
-<button (click)="getPersons()">CLICK</button>
-<div>
- {{persons}}
-</div>
+<!--</script>-->
