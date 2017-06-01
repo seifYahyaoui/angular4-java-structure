@@ -5,3 +5,13 @@
 .md-button.md-small {
   min-width: 1%;
 }
+
+.navigation-bar-position{
+  position: absolute;
+  top: 0;
+  left: 200px;
+  height: 50px;
+  width: 1400px;
+  background-color: #8c9eff;
+
+}

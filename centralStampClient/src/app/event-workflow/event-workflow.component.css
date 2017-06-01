@@ -1,0 +1,9 @@
+.event-workflow-postion{
+  position: absolute;
+  top:0px;
+  right: 0px;
+  width:300px;
+  overflow: scroll;
+  height: 80%;
+  background-color: #3C510C;
+}

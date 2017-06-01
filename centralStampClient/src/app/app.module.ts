@@ -18,6 +18,8 @@ import { MdlModule } from 'angular2-mdl';
 import {NVRSerices} from './services/NVRS.services';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MyFirstComponentComponent } from './my-first-component/my-first-component.component';
+import { MySecondComponentComponent } from './my-second-component/my-second-component.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TreeHolderComponent,
     EventDisplayerComponent,
     EventWorkflowComponent,
-    CentralVideoComponent
+    CentralVideoComponent,
+    MyFirstComponentComponent,
+    MySecondComponentComponent
   ],
   imports: [
     BrowserModule,

@@ -1,34 +1,40 @@
-<button (click)="getPersons()"><i class="material-icons">refresh</i></button>
+<div class="navigation-bar-position">
+  </div>
 
-<button (click)="savePersons()"><i class="material-icons">save</i></button>
+<!--<div class="navigation-bar-position">
 
-<table class="mdl-data-table mdl-js-data-table mdl-shadow--1dp">
-  <thead>
-  <tr>
-    <th class="mdl-data-table__cell--non-numeric">ID</th>
-    <th>FIRSTNAME</th>
-    <th>LASTNAME</th>
-    <th>AGE</th>
-    <th></th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let person of persons; let i = index">
-    <td class="mdl-data-table__cell--non-numeric"> {{person.id}}</td>
-    <td contenteditable="true" [textContent]="person.firstName" (input)="person.firstName=$event.target.textContent">{{person.firstName}}</td>
-    <td contenteditable="true" [textContent]="person.lastName" (input)="person.lastName=$event.target.textContent">{{person.lastName}}</td>
-    <td contenteditable="true" [textContent]="person.age" (input)="person.age=$event.target.textContent">{{person.age}}</td>
-    <td>
-      <a (click)="callEdit(person)" name="editButton"
-         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--icon"><i
-        class="material-icons">subdirectory_arrow_left</i></a>
-      <a (click)="callDelete(i)" name="deleteButton"
-         class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-button--icon"><i
-        class="material-icons">delete</i></a>
-    </td>
-  </tr>
-  </tbody>
-</table>
+  <button (click)="getPersons()"><i class="material-icons">refresh</i></button>
+
+  <button (click)="savePersons()"><i class="material-icons">save</i></button>
+
+  <table class="mdl-data-table mdl-js-data-table mdl-shadow&#45;&#45;1dp">
+    <thead>
+    <tr>
+      <th class="mdl-data-table__cell&#45;&#45;non-numeric">ID</th>
+      <th>FIRSTNAME</th>
+      <th>LASTNAME</th>
+      <th>AGE</th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let person of persons; let i = index">
+      <td class="mdl-data-table__cell&#45;&#45;non-numeric"> {{person.id}}</td>
+      <td contenteditable="true" [textContent]="person.firstName" (input)="person.firstName=$event.target.textContent">{{person.firstName}}</td>
+      <td contenteditable="true" [textContent]="person.lastName" (input)="person.lastName=$event.target.textContent">{{person.lastName}}</td>
+      <td contenteditable="true" [textContent]="person.age" (input)="person.age=$event.target.textContent">{{person.age}}</td>
+      <td>
+        <a (click)="callEdit(person)" name="editButton"
+           class="mdl-button mdl-js-button mdl-button&#45;&#45;fab mdl-js-ripple-effect mdl-button&#45;&#45;icon"><i
+          class="material-icons">subdirectory_arrow_left</i></a>
+        <a (click)="callDelete(i)" name="deleteButton"
+           class="mdl-button mdl-js-button mdl-button&#45;&#45;fab mdl-js-ripple-effect mdl-button&#45;&#45;colored mdl-button&#45;&#45;icon"><i
+          class="material-icons">delete</i></a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>-->
 
 <!--<div id="editForm" style="display: none">-->
 
