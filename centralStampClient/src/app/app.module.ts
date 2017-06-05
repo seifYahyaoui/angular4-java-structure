@@ -21,6 +21,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyFirstComponentComponent } from './my-first-component/my-first-component.component';
 import { MySecondComponentComponent } from './my-second-component/my-second-component.component';
 
+import {routes} from './app.route';
+import {RouterModule} from "@angular/router";
+import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@angular/common";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +43,11 @@ import { MySecondComponentComponent } from './my-second-component/my-second-comp
     HttpModule,
     MaterialModule,
     BrowserAnimationsModule,
-    MdlModule
+    MdlModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [NVRSerices],
+  providers: [NVRSerices,
+    { provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

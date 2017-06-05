@@ -1,4 +1,17 @@
-<app-my-second-component></app-my-second-component>
+<div>
+  <nav>
+    <a>Navigation:</a>
+    <ul>
+      <li><a [routerLink]="['home']">Home</a></li>
+    </ul>
+  </nav>
+  <div>
+    <div><p>=========================================</p></div>
+    <router-outlet></router-outlet>
+    <div><p>=========================================</p></div>
+  </div>
+</div>
+
 <!--<div>-->
   <!--<app-navigation-bar></app-navigation-bar>-->
   <!--<app-tree></app-tree>-->
