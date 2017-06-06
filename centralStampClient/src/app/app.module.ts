@@ -10,7 +10,7 @@ import { TreeHolderComponent } from './tree-holder/tree-holder.component';
 import { EventDisplayerComponent } from './event-displayer/event-displayer.component';
 import { EventWorkflowComponent } from './event-workflow/event-workflow.component';
 import { CentralVideoComponent } from './central-video/central-video.component';
-
+import {ChildComponent, ParentComponent} from './component-databinding/data-binding.component'
 
 import { MaterialModule } from '@angular/material';
 import { MdlModule } from 'angular2-mdl';
@@ -35,7 +35,9 @@ import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@ang
     EventWorkflowComponent,
     CentralVideoComponent,
     MyFirstComponentComponent,
-    MySecondComponentComponent
+    MySecondComponentComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
