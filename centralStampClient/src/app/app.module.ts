@@ -21,7 +21,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyFirstComponentComponent } from './my-first-component/my-first-component.component';
 import { MySecondComponentComponent } from './my-second-component/my-second-component.component';
 
-import {routes} from './app.route';
+import {PersonService} from './routing/person.service';
+import {ContactComponent} from './routing/contatc.component';
+import {HomeComponent} from './routing/home.component';
+import {MainRouteComponent} from './routing/main-route.component';
+import {PersonsComponent} from './routing/persons.component';
+import {PersonComponent} from './routing/person.component';
+
+
+import{routes} from './routing/routing.demo';
 import {RouterModule} from "@angular/router";
 import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@angular/common";
 
@@ -37,7 +45,8 @@ import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@ang
     MyFirstComponentComponent,
     MySecondComponentComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    ContactComponent,HomeComponent,MainRouteComponent,PersonComponent,PersonsComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +57,7 @@ import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@ang
     MdlModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [NVRSerices,
+  providers: [NVRSerices,PersonService,
     { provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })

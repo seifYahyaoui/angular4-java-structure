@@ -1,4 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
+import {Component, Input, Output, EventEmitter, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-parent',
@@ -68,7 +68,6 @@ export class ChildComponent {
   template: `    <h2 style="color: #0D3349 ">The parentName is : {{parentName}}</h2>
                   <app-my-first-component [(childName)] = "parentName"></app-my-first-component>
                   `,
-  styleUrls: ['./my-second-component.component.css']
 })
 export class Parent2Component implements OnInit {
 
@@ -88,7 +87,6 @@ export class Parent2Component implements OnInit {
     Change child name : <input type="text"  #nameInput value="{{childName}}">
     <button type="submit" (click) = 'changeName(nameInput.value)'>Add</button>    
              </div>`,
-  styleUrls: ['./my-first-component.component.css']
 })
 export class Child2Component implements OnInit {
 
