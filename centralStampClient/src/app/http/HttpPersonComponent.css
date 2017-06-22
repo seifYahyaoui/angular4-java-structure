@@ -1,0 +1,24 @@
+.mdl-layout {
+  align-items: flex-start;
+  justify-content: inherit;
+}
+.mdl-layout__content {
+  padding: 24px;
+  flex: none;
+}
+
+.md-button {
+  min-width: 1%;
+}
+
+.md-button.md-small {
+  min-width: 1%;
+}
+
+.navigation-bar-position{
+  position: absolute;
+  top: 84px;
+  left: 400px;
+  height: 50px;
+  width: 1400px;
+}

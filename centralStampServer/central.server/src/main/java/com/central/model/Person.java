@@ -1,6 +1,12 @@
 package com.central.model;
 
-public class Person {
+import java.io.Serializable;
+
+public class Person implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String firstName;
 	private String lastName;
 	private String id;
@@ -36,6 +42,12 @@ public class Person {
 
 	public void setAge(int age) {
 		this.age = age;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "[firstName:"+firstName+", lastName: "+lastName+", age:"+age+", id:"+id+", "+"]";
 	}
 
 }

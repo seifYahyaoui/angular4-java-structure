@@ -12,7 +12,7 @@ import {Person} from "./model";
   <li class="mdl-list__item" *ngFor="let person of persons">
   
     <i class="material-icons mdl-list__item-icon">person</i>
-     <button [routerLink]="['person',person.id]">{{person.name}}</button>
+     <button [routerLink]="['./person',person.id]">{{person.name}}</button>
     
   </li>
  </ul>

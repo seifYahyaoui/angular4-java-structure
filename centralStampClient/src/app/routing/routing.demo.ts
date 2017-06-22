@@ -11,7 +11,7 @@ import {PersonComponent} from "./person.component";
 
 
 export const routes: Routes = [
-  {path: '', component: HomeComponent},
+
   {path: 'home', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
   {

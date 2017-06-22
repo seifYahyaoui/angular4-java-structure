@@ -2,6 +2,7 @@ package com.central.service;
 
 import java.util.Collection;
 import java.util.Hashtable;
+import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
@@ -43,5 +44,19 @@ public class PersonService {
 
 	public Collection< Person> getAll() {
 		return persons.values();
+	}
+	
+	public Person createPerson(Person person){
+		persons.put(person.getId(), person);
+		return person;
+	}
+	
+	public void deletePerson(String id){
+		persons.remove(id);
+	}
+	
+	public Person updatePerson(Person person){
+		persons.put(person.getId(), person);
+		return person;
 	}
 }
