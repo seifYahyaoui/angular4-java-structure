@@ -170,17 +170,17 @@ function createObservables(subscribe) {
   };
 }
 
-arrayObservable = createObservables(function subscribe(obj) {
-    arr.forEach(obj.next);
-    obj.complete();
-  }
-);
-
-clickEventObservable = createObservables(function subscribe(obj) {
-    document.addEventListener('click',obj.next);
-    obj.complete();
-  }
-);
+// arrayObservable = createObservables(function subscribe(obj) {
+//     arr.forEach(obj.next);
+//     obj.complete();
+//   }
+// );
+//
+// clickEventObservable = createObservables(function subscribe(obj) {
+//     document.addEventListener('click',obj.next);
+//     obj.complete();
+//   }
+// );
 
 
 const arr = [10, 30, 40];
@@ -199,6 +199,6 @@ const observer = {
 }
 
 
-arrayObservable.map(x => x/10).filter(x => x > 3).delay(800).subscribe(observer);
+//arrayObservable.map(x => x/10).filter(x => x > 3).delay(800).subscribe(observer);
 
 //clickEventObservable.map(ev => ev.clientX).filter(x => x < 300).delay(400).subscribe(observer);

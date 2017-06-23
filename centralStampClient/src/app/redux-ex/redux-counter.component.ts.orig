@@ -1,0 +1,115 @@
+// /**
+//  * Created by seif on 6/22/17.
+//  */
+// import {
+//   Action,
+//   ActionCreator,
+//   Reducer,
+//   Store,
+//   createStore,
+//   StoreEnhancer
+// } from 'redux';
+// import {Component, Inject} from "@angular/core";
+// import {OpaqueToken} from '@angular/core';
+//
+// export const INCREMENT: string = 'INCREMENT';
+// export const DECREMENT: string = 'DECRMENT';
+//
+// export const increment: ActionCreator<Action> = () => ({
+//   type: INCREMENT
+// });
+//
+// export const decrement: ActionCreator<Action> = () => ({
+//   type: DECREMENT
+// });
+//
+// export interface AppState {
+//   counter: number;
+// }
+//
+//
+// let initialState: AppState = {
+//   counter: 0
+// };
+//
+// export const counterReducer: Reducer<AppState> = (state: AppState = initialState, action: Action): AppState => {
+//   switch (action.type) {
+//     case INCREMENT:
+//       return Object.assign({}, state, {counter: state.counter + 1});
+//     case DECREMENT:
+//       return Object.assign({}, state, {counter: state.counter - 1});
+//     default:
+//       return state;
+//   }
+// }
+//
+// let devtools: StoreEnhancer<AppState> =
+//   window['devToolsExtension'] ?
+//     window['devToolsExtension']() : f => f;
+//
+// export const store: Store<AppState> = createStore<AppState>(counterReducer, devtools);
+//
+// @Component({
+//   selector: 'counter-component',
+//   template: `
+// <div class="row">
+//   <div class="col-sm-6 col-md-4">
+//     <div class="thumbnail">
+//       <div class="caption">
+//         <h3>Counter</h3>
+//         <p>Custom Store</p>
+//         <p>
+//           The counter value is:<b>{{ counter }}</b>
+//         </p>
+//         <p>
+//           <button (click)="increment()"
+//                   class="btn btn-primary">
+//             Increment
+//           </button>
+//           <button (click)="decrement()"
+//                   class="btn btn-default">
+//             Decrement
+//           </button>
+//         </p>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+// `
+// })
+// export class CounterComponent {
+//   counter: number;
+//
+//   constructor(@Inject(AppStore) private store: Store<AppState>) {
+//     store.subscribe(() => this.readState());
+//     this.readState();
+//   }
+//
+//   readState() {
+//     let state: AppState = this.store.getState() as AppState;
+//     this.counter = state.counter;
+//   }
+//
+//   increment() {
+//     this.store.dispatch(increment());
+//   }
+//
+//   decrement() {
+//     this.store.dispatch(decrement());
+//   }
+// }
+//
+// @Component({
+//   selector: 'minimal-redux-app',
+//   template: `
+// <div>
+// <counter-component>
+// </counter-component>
+// </div>
+// `
+// })
+// export class CounterApp {
+// }
+//
+// export const AppStore = new OpaqueToken('App.store');
+//

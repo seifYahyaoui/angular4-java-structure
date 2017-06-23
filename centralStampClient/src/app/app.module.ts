@@ -40,7 +40,6 @@ import {LocationStrategy, HashLocationStrategy, PathLocationStrategy} from "@ang
 
 import {PersonHttpService} from './http/http.service';
 import {HttpPersonComponent} from'./http/HttpPersonComponent';
-import {CounterReduxAppAppModule} from'./redux/redux-counter.module';
 
 @NgModule({
   declarations: [
@@ -66,8 +65,7 @@ import {CounterReduxAppAppModule} from'./redux/redux-counter.module';
     MaterialModule,
     BrowserAnimationsModule,
     MdlModule,
-    RouterModule.forRoot(routes),
-    CounterReduxAppAppModule
+    RouterModule.forRoot(routes)
   ],
   providers: [NVRSerices,PersonService,PersonHttpService,
     { provide: LocationStrategy, useClass: PathLocationStrategy }],
