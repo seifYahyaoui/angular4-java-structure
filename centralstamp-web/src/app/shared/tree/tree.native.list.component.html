@@ -1,0 +1,4 @@
+<div id="tree" class="col-md-4 left" style="border: solid ;height:500px;overflow: auto">
+  <button type="button" [ngClass]="{'fa-chevron-circle-down': _expand,'fa-chevron-circle-up': !_expand}" class="btn btn-primary btn-sm fa" (click)="expandAll()"></button>
+    <native-tree [nodeDeep]="0"></native-tree>
+</div>
